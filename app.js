@@ -1,51 +1,73 @@
-// **Linha 1**
-// Exibe uma mensagem de boas-vindas ao jogo.
-alert('Boas vindas ao jogo do número secreto');
-
-// **Linha 2**
-// Gera um número aleatório entre 1 e 10 e armazena o valor em uma variável.
-let numeroSecreto = parseInt(Math.random() * 10 + 1);
-
-// **Linha 3**
-// Imprime o número secreto no console para fins de depuração.
-console.log(numeroSecreto);
-
-// **Linhas 4 e 5**
-// Declara duas variáveis para armazenar o chute do usuário e o número de tentativas.
-let chute;
+let listaDeNumerosSorteados = [];
+let numeroLimite = 10;
+let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
-// **Linha 6**
-// Inicia um loop `while` que continua enquanto o chute do usuário não for igual ao número secreto.
-while (chute != numeroSecreto) {
+function exibirTextoNaTela(tag, texto) {
+    let campo = document.querySelector(tag);
+    campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
+}
 
-    // **Linha 7**
-    // Solicita ao usuário que digite um número entre 1 e 10.
-    chute = prompt('Escolha um número entre 1 e 10');
+function exibirMensagemInicial() {
+    exibirTextoNaTela('h1', 'Jogo do número secreto');
+    exibirTextoNaTela('p', 'Escolha um número entre 1 e 10');
+}
 
-    // **Linha 8**
-    // Se o chute do usuário for igual ao número secreto, o loop termina.
+exibirMensagemInicial();
+
+function verificarChute() {
+    let chute = document.querySelector('input').value;
+    
     if (chute == numeroSecreto) {
-        break;
-    }
-
-    // **Linhas 9 a 12**
-    // Se o chute do usuário for menor ou maior que o número secreto, o código exibe uma mensagem de feedback.
-    // Também é incrementado o número de tentativas.
-    else {
+        exibirTextoNaTela('h1', 'Acertou!');
+        let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+        let mensagemTentativas = `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`;
+        exibirTextoNaTela('p', mensagemTentativas);
+        document.getElementById('reiniciar').removeAttribute('disabled');
+    } else {
         if (chute > numeroSecreto) {
-            alert(`O número secreto é menor que ${chute}`);
+            exibirTextoNaTela('p', 'O número secreto é menor');
         } else {
-            alert(`O número secreto é maior que ${chute}`);
+            exibirTextoNaTela('p', 'O número secreto é maior');
         }
         tentativas++;
+        limparCampo();
     }
 }
 
-// **Linha 13**
-// Define uma variável para armazenar a palavra "tentativa" ou "tentativas" dependendo do número de tentativas.
-let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+function gerarNumeroAleatorio() {
+    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
+    let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
 
-// **Linha 14**
-// Exibe uma mensagem de vitória, incluindo o número secreto e o número de tentativas.
-alert(`Isso ai! Você descobriu o número secreto ${numeroSecreto} com ${tentativas} ${palavraTentativa}`);
+    if (quantidadeDeElementosNaLista == numeroLimite) {
+        listaDeNumerosSorteados = [];
+    }
+    if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroAleatorio();
+    } else {
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        console.log(listaDeNumerosSorteados)
+        return numeroEscolhido;
+    }
+}
+
+function limparCampo() {
+    chute = document.querySelector('input');
+    chute.value = '';
+}
+
+function reiniciarJogo() {
+    numeroSecreto = gerarNumeroAleatorio();
+    limparCampo();
+    tentativas = 1;
+    exibirMensagemInicial();
+    document.getElementById('reiniciar').setAttribute('disabled', true)
+}
+
+
+
+
+
+
+
