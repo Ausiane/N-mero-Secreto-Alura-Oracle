@@ -13,7 +13,6 @@ body {
     justify-content: center;
 }
 
-
 body::before {
     background-image: url("img/code.png");
     background-repeat: no-repeat;
@@ -39,7 +38,6 @@ body::before {
     background-size: 100% 100%;
     position: relative;
 }
-
 
 .container__conteudo {
     display: flex;
@@ -111,29 +109,22 @@ button:disabled {
 }
 
 @media screen and (max-width: 1250px) {
-
     h1 {
         font-size: 50px;
     }
-
     .container__botao {
         font-size: 16px;
     }
-
-
     .texto__paragrafo {
         font-size: 24px;
     }
-
     .container__imagem-pessoa {
-        display: none;
+        display: block
     }
-
     .container__conteudo {
         display: block;
         position: inherit;
     }
-
     .container__informacoes {
         padding: 1rem
     }
