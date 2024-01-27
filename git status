@@ -1,0 +1,35 @@
+[33mcommit 09d5bc0ceeb0fdaf0eb0a95d4360202a98b667f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ausiane <65680366+Ausiane@users.noreply.github.com>
+Date:   Sat Jan 27 19:19:49 2024 +0000
+
+    texto de exibição
+
+[33mcommit db6eede99b7016a5674519e262516379360347ad[m
+Author: Ausiane <65680366+Ausiane@users.noreply.github.com>
+Date:   Sat Jan 27 19:07:17 2024 +0000
+
+    Atualizando index e style para incluir foto AI
+
+[33mcommit 8444904d1493ac4470e0292e651de5ee4a6133a7[m
+Author: Ausiane <65680366+Ausiane@users.noreply.github.com>
+Date:   Sat Jan 27 18:40:02 2024 +0000
+
+    atualizando limite: 1 a 50
+
+[33mcommit 135c35d8db70ea86612cc08d189e0b6a812d8b61[m
+Author: Ausiane <1506228@sga.pucminas.br>
+Date:   Sat Jan 27 14:22:17 2024 -0300
+
+    alterando limite para 100
+
+[33mcommit c947b98a3bf6144a776af3908ff83aa03ea41b02[m
+Author: Ausiane <1506228@sga.pucminas.br>
+Date:   Fri Jan 26 21:09:56 2024 -0300
+
+    atualizado
+
+[33mcommit 99471f59595c6108c0f6f3244712585f25663e70[m
+Author: Ausiane <1506228@sga.pucminas.br>
+Date:   Fri Jan 26 20:59:52 2024 -0300
+
+    projeto inicial
