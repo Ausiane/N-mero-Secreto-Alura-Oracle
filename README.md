@@ -1,7 +1,6 @@
 <h1>Jogo do número secreto: Curso Alura + Oracle</h1>
 
-![Insira aqui a descrição dessa imagem para ajudar na acessibilidade](https://cdn1.gnarususercontent.com.br/1/4658780/345c0295-7a4a-48c5-b591-fef053665ee2.png)  
-
+![Insira aqui a descrição dessa imagem para ajudar na acessibilidade](https://cdn1.gnarususercontent.com.br/1/4658780/358cd1de-4f07-4a22-8df7-0f027dbf8aaf.png)  
 
 <h2>Sobre</h2>
 <p>Projeto utilizado nos cursos de lógica de programação da Alura.</p>
